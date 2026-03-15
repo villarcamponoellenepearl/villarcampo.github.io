@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noellene Pearl Villarcampo — IT-4C</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+  <body>
+
+    <canvas id="ambientCanvas"></canvas>
+
+    <div id="progress-bar"></div>
+
+   
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring">
+      <div class="cursor-inner"></div>
+    </div>
+
+   
+    <div id="tooltip" class="tip" role="tooltip" aria-hidden="true"></div>
+
+  
+    <button class="back-top" id="backTop" aria-label="Back to top">
+      <i data-lucide="arrow-up" style="width:16px;height:16px;"></i>
+    </button>
+
+    <div id="nav">
+      <div class="nav-inner">
+
+        <a href="#hero" class="nav-logo">
+          <span class="logo-brk">[</span>
+          <i data-lucide="terminal" style="width:11px;height:11px;"></i>
+          <span>My Portfolio</span>
+          <span class="logo-brk">]</span>
+        </a>
+
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#about"><span class="nav-idx">01.</span>About</a></li>
+            <li><a href="#skills"><span class="nav-idx">02.</span>Skills</a></li>
+            <li><a href="#projects"><span class="nav-idx">03.</span>Projects</a></li>
+            <li><a href="#contact"><span class="nav-idx">04.</span>Contact</a></li>
+          </ul>
+
+          <button class="theme-pill" id="themeToggle" aria-label="Toggle theme">
+            <div class="theme-pill-icon" id="toggleThumb">
+              <i data-lucide="moon" id="themeIcon" style="width:10px;height:10px;"></i>
+            </div>
+            <span class="theme-pill-label" id="themeLabel">Dark</span>
+          </button>
+
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+      </div>
+
+      
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#about"    onclick="closeMenu()"><span class="mob-idx">01.</span>About</a>
+        <a href="#skills"   onclick="closeMenu()"><span class="mob-idx">02.</span>Skills</a>
+        <a href="#projects" onclick="closeMenu()"><span class="mob-idx">03.</span>Projects</a>
+        <a href="#contact"  onclick="closeMenu()"><span class="mob-idx">04.</span>Contact</a>
+        <div class="mob-theme-row">
+          <span class="mob-theme-label">Toggle Theme</span>
+          <button class="theme-pill" id="themeToggleMob">
+            <div class="theme-pill-icon">
+              <i data-lucide="moon" id="themeIconMob" style="width:10px;height:10px;"></i>
+            </div>
+            <span class="theme-pill-label" id="themeLabelMob">Dark</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+   
+
+    <section id="hero">
+
+     
+      <div class="hero-mesh"></div>
+      <div class="hero-grid"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+      <div id="particles"></div>
+
+      <span class="bracket-corner bc-tl"></span>
+      <span class="bracket-corner bc-tr"></span>
+      <span class="bracket-corner bc-bl"></span>
+
+      <div class="hero-inner">
+
+      
+        <div class="hero-left">
+
+          <div class="hero-eyebrow">
+            <div class="live-dot"></div>
+            <span class="hero-eyebrow-text">BS Information Technology · WMSU · Zamboanga City</span>
+          </div>
+
+          <h1 class="hero-name">
+            <span class="hi">Hi, I'm </span><br>
+            <span class="accent-name" id="heroAccentName">Noellene Pearl</span>
+            <span class="hero-surname"> Villarcampo</span>
+          </h1>
+
+          <div class="typewriter-row">
+            <span class="tw-prompt">› </span>
+            <span class="tw-text" id="tw"></span>
+            <span class="tw-cursor"></span>
+          </div>
+
+          <p class="hero-desc">
+            A 4th year <strong>Information Technology</strong> student at Western Mindanao State University.
+            I enjoy building web systems, working with data, and exploring how technology can solve
+            real-world problems — especially in education.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#projects" class="btn-primary">
+              <i data-lucide="folder-open" style="width:14px;height:14px;"></i>
+              View Projects
+              <span class="btn-shine"></span>
+            </a>
+            <a href="#contact" class="btn-outline">
+              <i data-lucide="send" style="width:13px;height:13px;"></i>
+              Get in Touch
+            </a>
+            <a href="mailto:noellenepearl@gmail.com" class="btn-outline">
+              <i data-lucide="mail" style="width:13px;height:13px;"></i>
+              Email Me
+            </a>
+          </div>
+
+        </div>
+        
+
+        <div class="hero-card">
+          <div class="card-top-bar"></div>
+
+          <div class="card-bar">
+            <div class="card-dots">
+              <span style="background:#ff5f57"></span>
+              <span style="background:#febc2e"></span>
+              <span style="background:#28c840"></span>
+            </div>
+            <span class="card-bar-label">profile.json</span>
+            <span class="card-bar-path">~/noellene</span>
+          </div>
+
+          <div class="card-body">
+            <div class="info-row">
+              <i data-lucide="user" class="info-row-icon" style="width:14px;height:14px;"></i>
+              <div>
+                <div class="info-key">Name</div>
+                <div class="info-val">Noellene Pearl Villarcampo</div>
+              </div>
+            </div>
+            <div class="info-row">
+              <i data-lucide="graduation-cap" class="info-row-icon" style="width:14px;height:14px;"></i>
+              <div>
+                <div class="info-key">Degree</div>
+                <div class="info-val">BS Information Technology</div>
+              </div>
+            </div>
+            <div class="info-row">
+              <i data-lucide="building-2" class="info-row-icon" style="width:14px;height:14px;"></i>
+              <div>
+                <div class="info-key">University</div>
+                <div class="info-val">Western Mindanao State University</div>
+              </div>
+            </div>
+            <div class="info-row">
+              <i data-lucide="map-pin" class="info-row-icon" style="width:14px;height:14px;"></i>
+              <div>
+                <div class="info-key">Location</div>
+                <div class="info-val">Zamboanga City, Philippines</div>
+              </div>
+            </div>
+            <div class="info-row">
+              <i data-lucide="sparkles" class="info-row-icon" style="width:14px;height:14px;"></i>
+              <div>
+                <div class="info-key">Focus</div>
+                <div class="info-val">Web Dev · ML · Data Analysis</div>
+              </div>
+            </div>
+            <div class="info-row">
+              <i data-lucide="github" class="info-row-icon" style="width:14px;height:14px;"></i>
+              <div>
+                <div class="info-key">GitHub</div>
+                <div class="info-val">
+                  <a href="https://github.com/noellenepearl" target="_blank">noellenepearl</a>
+                </div>
+              </div>
+            </div>
+          </div>
+       
+
+          <div class="card-footer">
+            <span class="card-status-dot"></span>
+            <span class="card-status-text">Open to opportunities</span>
+          </div>
+        </div>
+     
+
+      </div>
+      
+
+     
+      <div class="scroll-hint" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <span class="scroll-hint-label">Scroll</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </div>
+    </section>
+   
+
+   
+    <section id="about" class="section-pad section-deco">
+      <div class="wrap">
+
+        <div class="fade-up">
+          <div class="s-eyebrow"><span class="num">01 /</span> Who I Am</div>
+          <h2 class="s-title">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+
+          
+          <div>
+            <div class="objective-card fade-left d1">
+              <p>
+                I am a graduating Information Technology student eager to learn and adapt to new
+                technical challenges. I aim to apply my academic knowledge in a growth-oriented
+                organization where I can utilize my foundational skills in
+                <strong>data analysis and information management</strong>, contribute to organizational
+                projects, and gain hands-on experience while continuously enhancing my technical
+                and professional expertise.
+              </p>
+            </div>
+
+            <div class="subsection-label fade-up d2">Personal Skills</div>
+            <ul class="soft-list">
+              <li class="soft-item fade-left d2">
+                <span class="soft-icon"><i data-lucide="message-square" style="width:13px;height:13px;"></i></span>
+                Strong written and verbal communication in technical and non-technical contexts
+              </li>
+              <li class="soft-item fade-left d3">
+                <span class="soft-icon"><i data-lucide="list-checks" style="width:13px;height:13px;"></i></span>
+                Organized and detail-oriented in handling technical tasks and data
+              </li>
+              <li class="soft-item fade-left d3">
+                <span class="soft-icon"><i data-lucide="users" style="width:13px;height:13px;"></i></span>
+                Capable of working independently and collaboratively in a team
+              </li>
+              <li class="soft-item fade-left d4">
+                <span class="soft-icon"><i data-lucide="file-text" style="width:13px;height:13px;"></i></span>
+                Capable of following and writing technical documentation efficiently
+              </li>
+              <li class="soft-item fade-left d4">
+                <span class="soft-icon"><i data-lucide="shield-check" style="width:13px;height:13px;"></i></span>
+                Demonstrates professionalism, reliability, and accountability
+              </li>
+            </ul>
+          </div>
+
+        
+          <div>
+            <div class="subsection-label edu-heading fade-up d1">Education</div>
+            <div class="edu-timeline">
+
+              <div class="edu-item fade-right d1">
+                <div class="edu-dot"></div>
+                <div class="edu-card">
+                  <div class="edu-degree">BS in Information Technology</div>
+                  <div class="edu-school">Western Mindanao State University</div>
+                  <div class="edu-year">2022 – Present · Zamboanga City</div>
+                  <div class="edu-badge"><span class="badge-ping"></span>Currently Enrolled · 4th Year</div>
+                </div>
+              </div>
+
+              <div class="edu-item fade-right d2">
+                <div class="edu-dot"></div>
+                <div class="edu-card">
+                  <div class="edu-degree">Senior High School — ICT Strand</div>
+                  <div class="edu-school">Mangusu Integrated School</div>
+                  <div class="edu-year">2020 – 2022 · Zamboanga City</div>
+                </div>
+              </div>
+
+              <div class="edu-item fade-right d3">
+                <div class="edu-dot"></div>
+                <div class="edu-card">
+                  <div class="edu-degree">Junior High School</div>
+                  <div class="edu-school">Mangusu Integrated School</div>
+                  <div class="edu-year">2016 – 2020 · Zamboanga City</div>
+                </div>
+              </div>
+
+              <div class="edu-item fade-right d4">
+                <div class="edu-dot"></div>
+                <div class="edu-card">
+                  <div class="edu-degree">Elementary</div>
+                  <div class="edu-school">Dr. Manuel S. Diaz Memorial Elementary School</div>
+                  <div class="edu-year">2010 – 2016 · Tamaraan, Mangusu, Zamboanga City</div>
+                </div>
+              </div>
+
+            </div>
+           
+          </div>
+
+        </div>
+       
+
+      </div>
+    </section>
+    
+
+    <section id="skills" class="section-pad section-deco">
+      <div class="wrap">
+
+        <div class="fade-up">
+          <div class="s-eyebrow"><span class="num">02 /</span> Technologies</div>
+          <h2 class="s-title">Skills</h2>
+        </div>
+
+        
+        <div class="skill-tabs fade-up d1">
+          <button class="skill-tab active" data-group="all">All</button>
+          <button class="skill-tab" data-group="lang">Languages</button>
+          <button class="skill-tab" data-group="web">Web Dev</button>
+          <button class="skill-tab" data-group="fw">Frameworks</button>
+          <button class="skill-tab" data-group="db">Databases</button>
+          <button class="skill-tab" data-group="ai">AI & Data</button>
+          <button class="skill-tab" data-group="tools">Tools</button>
+        </div>
+
+        <div class="skill-groups">
+
+          <div class="skill-group fade-up" data-cat="lang">
+            <div class="skill-group-label">
+              <i data-lucide="code-2" style="width:12px;height:12px;"></i>Programming Languages
+            </div>
+            <div class="skill-grid">
+              <div class="skill-chip" data-tooltip="Used for ML pipelines &amp; data scripts">
+                <i data-lucide="terminal" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">Python</div>
+                  <div class="chip-sub">Backend / ML</div>
+                </div>
+                <span class="lv-tag lv-amber">basic</span>
+              </div>
+              <div class="skill-chip" data-tooltip="Backend scripting for WMSU web projects">
+                <i data-lucide="code-2" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">PHP</div>
+                  <div class="chip-sub">Backend scripting</div>
+                </div>
+                <span class="lv-tag lv-purple">beginner</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="skill-group fade-up d1" data-cat="web">
+            <div class="skill-group-label">
+              <i data-lucide="layout" style="width:12px;height:12px;"></i>Web Development
+            </div>
+            <div class="skill-grid">
+              <div class="skill-chip" data-tooltip="Semantic structure &amp; accessibility">
+                <i data-lucide="file-code" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">HTML5</div>
+                  <div class="chip-sub">Markup</div>
+                </div>
+              </div>
+              <div class="skill-chip" data-tooltip="Layouts, animations &amp; responsive design">
+                <i data-lucide="palette" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">CSS3</div>
+                  <div class="chip-sub">Styling</div>
+                </div>
+              </div>
+              <div class="skill-chip" data-tooltip="Component-based rapid UI">
+                <i data-lucide="layout-template" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">Bootstrap</div>
+                  <div class="chip-sub">CSS Framework</div>
+                </div>
+                <span class="lv-tag lv-purple">beginner</span>
+              </div>
+              <div class="skill-chip" data-tooltip="Utility-first approach for fast styling">
+                <i data-lucide="wind" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">Tailwind CSS</div>
+                  <div class="chip-sub">Utility-first CSS</div>
+                </div>
+                <span class="lv-tag lv-purple">beginner</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group fade-up d2" data-cat="fw">
+            <div class="skill-group-label">
+              <i data-lucide="layers" style="width:12px;height:12px;"></i>Frameworks & Libraries
+            </div>
+            <div class="skill-grid">
+              <div class="skill-chip" data-tooltip="Python web framework for rapid development">
+                <i data-lucide="layers" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">Django</div>
+                  <div class="chip-sub">Web framework</div>
+                </div>
+                <span class="lv-tag lv-amber">basic</span>
+              </div>
+              <div class="skill-chip" data-tooltip="Desktop application development">
+                <i data-lucide="monitor-dot" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">Visual Studio</div>
+                  <div class="chip-sub">Desktop app dev</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="skill-group fade-up d3" data-cat="db">
+            <div class="skill-group-label">
+              <i data-lucide="database" style="width:12px;height:12px;"></i>Databases
+            </div>
+            <div class="skill-grid">
+              <div class="skill-chip" data-tooltip="Used in MindWell web application">
+                <i data-lucide="database" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">MySQL</div>
+                  <div class="chip-sub">Relational DB</div>
+                </div>
+                <span class="lv-tag lv-purple">beginner</span>
+              </div>
+              <div class="skill-chip" data-tooltip="Used in Art De Rio booking system">
+                <i data-lucide="server" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">PostgreSQL</div>
+                  <div class="chip-sub">Relational DB</div>
+                </div>
+                <span class="lv-tag lv-amber">basic</span>
+              </div>
+            </div>
+          </div>
+
+        
+          <div class="skill-group fade-up" data-cat="ai">
+            <div class="skill-group-label">
+              <i data-lucide="brain" style="width:12px;height:12px;"></i>AI & Data Science
+            </div>
+            <div class="skill-grid">
+              <div class="skill-chip" data-tooltip="Core ML models in SPARK thesis">
+                <i data-lucide="brain" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">Machine Learning</div>
+                  <div class="chip-sub">AI / Predictive Models</div>
+                </div>
+                <span class="lv-tag lv-purple">beginner</span>
+              </div>
+              <div class="skill-chip" data-tooltip="Core ML models in SPARK thesis">
+                <i data-lucide="brain" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">scikit-learn</div>
+                  <div class="chip-sub">ML library</div>
+                </div>
+                <span class="lv-tag lv-purple">beginner</span>
+              </div>
+              <div class="skill-chip" data-tooltip="Data wrangling &amp; feature engineering">
+                <i data-lucide="table-2" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">Pandas</div>
+                  <div class="chip-sub">Data analysis</div>
+                  <span class="lv-tag lv-purple">beginner</span>
+                </div>
+              </div>
+              <div class="skill-chip" data-tooltip="Numerical arrays &amp; matrix operations">
+                <i data-lucide="calculator" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">NumPy</div>
+                  <div class="chip-sub">Numerical computing</div>
+                  <span class="lv-tag lv-purple">beginner</span>
+                </div>
+              </div>
+              <div class="skill-chip" data-tooltip="Interactive ML exploration &amp; visualization">
+                <i data-lucide="notebook-pen" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">Jupyter Notebook</div>
+                  <div class="chip-sub">Interactive compute</div>
+                  <span class="lv-tag lv-purple">beginner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="skill-group fade-up d1" data-cat="tools">
+            <div class="skill-group-label">
+              <i data-lucide="wrench" style="width:12px;height:12px;"></i>Tools & Platforms
+            </div>
+            <div class="skill-grid">
+              <div class="skill-chip" data-tooltip="Version control &amp; collaboration">
+                <i data-lucide="github" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">GitHub</div>
+                  <div class="chip-sub">Version control</div>
+                </div>
+                <span class="lv-tag lv-purple">beginner</span>
+              </div>
+              <div class="skill-chip" data-tooltip="Primary editor for all projects">
+                <i data-lucide="code" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="chip-name">VS Code</div>
+                  <div class="chip-sub">Code editor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+
+      </div>
+    </section>
+    
+
+    <section id="projects" class="section-pad section-deco">
+      <div class="wrap">
+
+        <div class="fade-up">
+          <div class="s-eyebrow"><span class="num">03 /</span> Work</div>
+          <h2 class="s-title">Projects</h2>
+        </div>
+
+        <div class="proj-grid">
+
+          
+          <div class="proj-card fade-left">
+            <div class="proj-spotlight"></div>
+            <div class="proj-header">
+              <span class="proj-num">Project — 01</span>
+              <span class="proj-badge">Windows Desktop</span>
+            </div>
+            <div class="proj-title">Art De Rio</div>
+            <div class="proj-subtitle">Software Engineering · WMSU</div>
+            <p class="proj-desc">
+              An online photography booking system designed to manage photography transactions —
+              including online booking, presentation of available packages for customer selection,
+              and maintenance of customer records such as payment details and invoices.
+            </p>
+            <div class="proj-role-block">
+              <strong>Role:</strong> Systems Analyst, Archivist &amp; UI/UX Team Member
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">PostgreSQL</span>
+              <span class="proj-tag">HTML5</span>
+              <span class="proj-tag">CSS3</span>
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">Hostinger</span>
+              <span class="proj-tag">GitHub</span>
+            </div>
+            <a href="https://github.com/" target="_blank" rel="noopener" class="proj-link">
+              <i data-lucide="github" style="width:13px;height:13px;"></i>
+              View on GitHub
+              <i data-lucide="arrow-right" style="width:12px;height:12px;" class="proj-arrow-icon"></i>
+            </a>
+          </div>
+
+          
+          <div class="proj-card fade-right d1">
+            <div class="proj-spotlight"></div>
+            <div class="proj-header">
+              <span class="proj-num">Project — 02</span>
+              <span class="proj-badge">Web Application</span>
+            </div>
+            <div class="proj-title">MindWell</div>
+            <div class="proj-subtitle">Application Development · WMSU</div>
+            <p class="proj-desc">
+              A web-based mental wellness platform enabling interaction between patients and therapists —
+              allowing users to log in, access mental health resources, and schedule consultations
+              with licensed professionals.
+            </p>
+            <div class="proj-role-block">
+              <strong>Role:</strong> Systems Analyst &amp; Frontend Developer
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">MySQL</span>
+              <span class="proj-tag">HTML5</span>
+              <span class="proj-tag">CSS3</span>
+              <span class="proj-tag">Bootstrap</span>
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">VS Code</span>
+            </div>
+            <span class="proj-link locked">
+              <i data-lucide="lock" style="width:13px;height:13px;"></i>
+              Localhost only
+            </span>
+          </div>
+
+          
+          <div class="proj-card wide fade-up d2">
+            <div class="proj-spotlight"></div>
+            <div class="proj-wide-inner">
+
+              
+              <div class="proj-wide-text">
+                <div class="proj-header">
+                  <span class="proj-num">Project — 03 · Capstone Thesis</span>
+                  <span class="proj-badge featured"> Featured</span>
+                </div>
+                <div class="proj-title">SPARK — Section Placement &amp; Academic Risk Prediction System</div>
+                <div class="proj-subtitle">Thesis Research · Zamboanga National High School West</div>
+                <p class="proj-desc">
+                  A two-stage machine learning pipeline that recommends Grade 7 program placements
+                  for incoming students at ZNHS-West. Stage 1 uses Ridge Regression to predict
+                  academic grades from Grade 6 features. Stage 2 uses XGBoost and Gradient Boosting
+                  to classify students into five program tracks.
+                </p>
+                <div class="proj-role-block">
+                  <strong>Role:</strong> Lead Researcher &amp; ML Developer
+                </div>
+                <div class="proj-tags">
+                  <span class="proj-tag">Python</span>
+                  <span class="proj-tag">scikit-learn</span>
+                  <span class="proj-tag">XGBoost</span>
+                  <span class="proj-tag">Ridge Regression</span>
+                  <span class="proj-tag">SMOTE</span>
+                  <span class="proj-tag">Pandas</span>
+                  <span class="proj-tag">NumPy</span>
+                  <span class="proj-tag">Jupyter Notebook</span>
+                </div>
+              </div>
+             
+
+              <div class="spark-pipeline" id="sparkPipeline">
+                <div class="pipeline-heading">ML Pipeline</div>
+                <div class="pipe-node pipe-in">
+                  <i data-lucide="database" style="width:13px;height:13px;"></i>
+                  <span>Grade 6 Data</span>
+                </div>
+                <div class="pipe-arr">
+                  <i data-lucide="arrow-down" style="width:11px;height:11px;"></i>
+                </div>
+                <div class="pipe-node pipe-s1">
+                  <i data-lucide="trending-up" style="width:13px;height:13px;"></i>
+                  <span>Ridge Regression</span>
+                  <em>Stage 1</em>
+                </div>
+                <div class="pipe-arr">
+                  <i data-lucide="arrow-down" style="width:11px;height:11px;"></i>
+                </div>
+                <div class="pipe-node pipe-s2">
+                  <i data-lucide="brain" style="width:13px;height:13px;"></i>
+                  <span>XGBoost + GBM</span>
+                  <em>Stage 2</em>
+                </div>
+                <div class="pipe-arr">
+                  <i data-lucide="arrow-down" style="width:11px;height:11px;"></i>
+                </div>
+                <div class="pipe-tracks">
+                  <span class="t-tag">STE</span>
+                  <span class="t-tag">SPFL</span>
+                  <span class="t-tag">SPTVE</span>
+                  <span class="t-tag">TOP-5</span>
+                  <span class="t-tag">HETERO</span>
+                </div>
+              </div>
+              
+
+            </div>
+            
+          </div>
+
+        </div>
+        
+
+      </div>
+    </section>
+    
+
+    <section id="contact" class="section-pad section-deco">
+      <div class="wrap">
+
+        <div class="fade-up">
+          <div class="s-eyebrow"><span class="num">04 /</span> Reach Out</div>
+          <h2 class="s-title">Contact</h2>
+        </div>
+
+        <div class="contact-grid">
+
+          <div>
+            <p class="contact-intro fade-left d1">
+              I'm currently open to <strong>internship opportunities</strong>, freelance projects,
+              and research collaborations. Feel free to reach out — I'd love to connect and learn together!
+            </p>
+            <div class="contact-cards">
+              <a href="mailto:noellenepearl@gmail.com" class="c-card fade-left d2">
+                <i data-lucide="mail" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="c-key">Email</div>
+                  <div class="c-val">noellenepearl@gmail.com</div>
+                </div>
+                <i data-lucide="arrow-right" class="c-arr" style="width:13px;height:13px;"></i>
+              </a>
+              <a href="tel:+639610056461" class="c-card fade-left d3">
+                <i data-lucide="phone" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="c-key">Phone</div>
+                  <div class="c-val">(+63) 9610056461</div>
+                </div>
+                <i data-lucide="arrow-right" class="c-arr" style="width:13px;height:13px;"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/noellene-pearl-villarcampo-718b003b0/" target="_blank" rel="noopener" class="c-card fade-left d4">
+                <i data-lucide="linkedin" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="c-key">LinkedIn</div>
+                  <div class="c-val">noellene-pearl-villarcampo</div>
+                </div>
+                <i data-lucide="arrow-right" class="c-arr" style="width:13px;height:13px;"></i>
+              </a>
+              <div class="c-card fade-left d5" style="pointer-events:none;">
+                <i data-lucide="map-pin" style="width:16px;height:16px;"></i>
+                <div>
+                  <div class="c-key">Location</div>
+                  <div class="c-val">Mangusu, Zamboanga City, Philippines</div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="contact-right fade-right d1">
+            <div class="avail-box">
+              <div class="avail-header">
+                <div class="avail-dot"></div>
+                <span class="avail-label">Currently Available</span>
+              </div>
+              <p class="avail-text">
+                Open to <strong>internship</strong>, <strong>entry-level roles</strong>, and
+                <strong>research collaborations</strong> in web development, data work, or IT-related fields.
+                Always happy to learn and grow with a great team.
+              </p>
+              <div class="avail-tags">
+                <span class="a-tag">Internship</span>
+                <span class="a-tag">Part-time</span>
+                <span class="a-tag">Freelance</span>
+                <span class="a-tag">Research</span>
+                <span class="a-tag">Entry Level</span>
+              </div>
+            </div>
+          
+
+            <div class="social-row">
+              <a href="https://github.com/noellenepearl" target="_blank" rel="noopener" class="soc-btn">
+                <i data-lucide="github" style="width:15px;height:15px;"></i>GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/noellene-pearl-villarcampo-718b003b0/" target="_blank" rel="noopener" class="soc-btn">
+                <i data-lucide="linkedin" style="width:15px;height:15px;"></i>LinkedIn
+              </a>
+              <a href="mailto:noellenepearl@gmail.com" class="soc-btn">
+                <i data-lucide="mail" style="width:15px;height:15px;"></i>Email
+              </a>
+            </div>
+          </div>
+          
+
+        </div>
+  
+
+      </div>
+    </section>
+    
+
+   
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo"><span class="logo-brk">[</span>My Portfolio<span class="logo-brk">]</span></div>
+        <div class="footer-copy">© 2025 Noellene Pearl Villarcampo · IT-4C</div>
+        <div class="footer-stack">Built with <span>HTML · CSS · JS</span></div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
